@@ -1,4 +1,4 @@
-package com.cooksys.dao.impl;
+package com.cooksys.back.dao.impl;
 
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
+import com.cooksys.api.IAccountModel;
+import com.cooksys.back.api.impl.AccountModel;
 import com.cooksys.back.dao.IAccountDAO;
-import com.cooksys.back.impl.AccountModel;
-import com.cooksys.interfaces.IAccountModel;
 import com.cooksys.model.Account;
 
 @Repository

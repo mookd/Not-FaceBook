@@ -1,6 +1,6 @@
-package com.cooksys.back.impl;
+package com.cooksys.back.api.impl;
 
-import com.cooksys.interfaces.IAccountModel;
+import com.cooksys.api.IAccountModel;
 import com.cooksys.model.Account;
 
 public class AccountModel implements IAccountModel {

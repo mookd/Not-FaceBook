@@ -2,7 +2,7 @@ package com.cooksys.back.dao;
 
 import java.util.List;
 
-import com.cooksys.interfaces.IPostModel;
+import com.cooksys.api.IPostModel;
 import com.cooksys.model.Post;
 
 public interface IPostDAO {

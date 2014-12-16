@@ -1,4 +1,4 @@
-package com.cooksys.interfaces;
+package com.cooksys.api;
 
 public interface IPostModel {
 	

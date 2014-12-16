@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
 
+import com.cooksys.api.IAccountModel;
 import com.cooksys.back.dao.IAccountDAO;
-import com.cooksys.interfaces.IAccountModel;
 import com.cooksys.model.Account;
 
 @Component
@@ -42,17 +42,17 @@ public class LoginBean {
 //		setPassword("iddqd");
 //		System.out.println("inputed username = " + username);
 //		System.out.println("inputed password = " + password);
-
-		if(BCrypt.checkpw(password, justin.getPassword())){
-			authBean.setAuthenticated(true);
-			isLoggedIn = true;
-			System.out.println("login successful");
-			System.out.println("isLoggedIn = true");
-			//return "profile";
-		}else{
-			//return "LOG IN FAILED";
-			System.out.println("login failed");
-		}
+//
+//		if(BCrypt.checkpw(password, justin.getPassword())){
+//			authBean.setAuthenticated(true);
+//			isLoggedIn = true;
+//			System.out.println("login successful");
+//			System.out.println("isLoggedIn = true");
+//			//return "profile";
+//		}else{
+//			//return "LOG IN FAILED";
+//			System.out.println("login failed");
+//		}
 	}
 
 	public String getUsername() {

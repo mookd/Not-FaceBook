@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
-import com.cooksys.interfaces.IPostModel;
+import com.cooksys.api.IPostModel;
 
 
 @Component

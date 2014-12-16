@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cooksys.api.IPostModel;
 import com.cooksys.back.dao.IPostDAO;
-import com.cooksys.interfaces.IPostModel;
 import com.cooksys.model.Account;
 import com.cooksys.model.Post;
 

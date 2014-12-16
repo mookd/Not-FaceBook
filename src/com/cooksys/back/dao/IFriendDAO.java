@@ -1,8 +1,7 @@
 package com.cooksys.back.dao;
 
 
-import com.cooksys.interfaces.IFriendModel;
-
+import com.cooksys.api.IFriendModel;
 import com.cooksys.model.Friend;
 
 public interface IFriendDAO {

@@ -5,8 +5,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.cooksys.dao.impl.AccountDAOImpl;
-import com.cooksys.interfaces.IAccountModel;
+import com.cooksys.api.IAccountModel;
 
 @Component
 @Scope("singleton")

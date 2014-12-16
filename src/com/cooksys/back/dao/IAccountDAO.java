@@ -1,6 +1,6 @@
 package com.cooksys.back.dao;
 
-import com.cooksys.interfaces.IAccountModel;
+import com.cooksys.api.IAccountModel;
 
 public interface IAccountDAO {
 	
