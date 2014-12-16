@@ -1,0 +1,7 @@
+package com.cooksys.interfaces;
+
+public interface IAccountModel {
+	
+	public String getUsername();
+	
+}

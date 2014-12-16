@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.model.Account" table="account" catalog="facebook">
+        <id name="accountId" type="java.lang.Integer">
+            <column name="account_id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="45" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="60" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="45" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="45" />
+        </property>
+        <property name="urlPicture" type="string">
+            <column name="url_picture" length="45" />
+        </property>
+        <set name="friendsForFriendeeId" table="friend" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="friendee_id" />
+            </key>
+            <one-to-many class="com.cooksys.model.Friend" />
+        </set>
+        <set name="friendsForFrienderId" table="friend" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="friender_id" />
+            </key>
+            <one-to-many class="com.cooksys.model.Friend" />
+        </set>
+        <set name="postsForPostedTo" table="post" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="posted_to" />
+            </key>
+            <one-to-many class="com.cooksys.model.Post" />
+        </set>
+        <set name="postsForPostedFrom" table="post" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="posted_from" />
+            </key>
+            <one-to-many class="com.cooksys.model.Post" />
+        </set>
+    </class>
+</hibernate-mapping>

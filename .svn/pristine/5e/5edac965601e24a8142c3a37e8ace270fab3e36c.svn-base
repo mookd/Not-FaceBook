@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.model.Friend" table="friend" catalog="facebook">
+        <id name="friendId" type="java.lang.Integer">
+            <column name="friend_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="accountByFriendeeId" class="com.cooksys.model.Account" fetch="select">
+            <column name="friendee_id" />
+        </many-to-one>
+        <many-to-one name="accountByFrienderId" class="com.cooksys.model.Account" fetch="select">
+            <column name="friender_id" />
+        </many-to-one>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="19" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="updated_date" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>

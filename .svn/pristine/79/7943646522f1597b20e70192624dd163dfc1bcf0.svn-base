@@ -1,0 +1,5 @@
+package com.cooksys.interfaces;
+
+public interface IFriendModel {
+
+}

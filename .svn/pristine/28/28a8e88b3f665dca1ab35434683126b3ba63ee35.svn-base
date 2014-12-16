@@ -1,0 +1,44 @@
+package com.cooksys.interfaces;
+
+public interface IPostModel {
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getPostId();
+	
+	
+	public String getBody();
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getPostedBy();
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getPostedTo();
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public String getPostedDate();
+	
+	/**
+	 * TODO
+	 */
+	public IAccountModel getAccountPostedBy();
+	
+	/**
+	 * TODO
+	 * @return
+	 */
+	public IAccountModel getAccountPostedTo();
+	
+	
+}

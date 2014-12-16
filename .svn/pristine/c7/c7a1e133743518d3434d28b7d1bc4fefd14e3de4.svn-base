@@ -1,0 +1,13 @@
+package com.cooksys.interfaces;
+
+public interface IAccountModel {
+	
+	public String getUsername();
+	
+	public String getPassowrd();
+	
+	public String getFirstName();
+	
+	public String getLastName();
+	
+}

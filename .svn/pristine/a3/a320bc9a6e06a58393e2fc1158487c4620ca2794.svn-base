@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:sec="http://www.springframework.org/schema/security">
+
+<h:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link
+		href="#{request.contextPath}/resources/bootstrap/css/bootstrap.css"
+		rel="stylesheet" />
+	<link
+		href="#{request.contextPath}/resources/bootstrap/css/bootstrap-responsive.css"
+		rel="stylesheet" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
+	<link rel="shortcut icon" href="#{request.contextPath}/favicon.ico" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="#{request.contextPath}/resources/images/ico/apple-touch-icon-114-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="#{request.contextPath}/resources/images/ico/apple-touch-icon-72-precomposed.png" />
+	<link rel="apple-touch-icon-precomposed"
+		href="#{request.contextPath}/resources/images/ico/apple-touch-icon-57-precomposed.png" />
+	<h:outputStylesheet library="jquery-ui"
+		name="css/ui-lightness/jquery-ui-1.8.20.custom.css" />
+	<h:outputStylesheet library="jquery-notify" name="ui.notify.css" />
+
+	<script type="text/javascript">
+var baseUri = '#{request.contextPath}/';
+var apiUri = baseUri + 'api/';
+
+    }
+</script>
+</h:head>
+<h:body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Welcome To Bitter!!!</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="index.xhtml">HOME</a></li>
+					<button data-toggle="modal" data-target="#myModal" type="button"
+						class="btn btn-success navbar-btn">Register</button>
+					<li><a href="tweets.xhtml">TWEETS</a></li>
+					<li><a href="Contact.html">FOLLOWERS</a></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group" action="authentication" method="POST">
+
+						<input type="text" class="form-control" placeholder="UserName" />
+						<input type="password" class="form-control" placeholder="Password" />
+					</div>
+					<button type="submit" class="btn btn-primary">Log In</button>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+	<h:form>
+		<p:dataScroller mode="inline" scrollHeight="500"  value="#{viewBackingBean.tweets}" var="tweets"
+			chunkSize="10">
+			<f:facet name="header">
+            Scroll Down to Load More Tweets
+        </f:facet>
+
+			<h:panelGrid columns="2" style="width:100%"
+				columnClasses="logo,detail">
+
+
+				<p:outputPanel class="panel panel-info">
+					<h:panelGrid columns="2" cellpadding="5">
+						<h:outputText value="Tweet:" />
+						<h:outputText value="#{tweets.id}" style="font-weight: bold" />
+						<h:outputText value="Tweets:" />
+						<h:outputText value="#{tweets.tweet}" style="font-weight: bold" />
+						<h:outputText value="Users:" />
+						<h:outputText value="#{tweets.user.username}"
+							style="font-weight: bold" />
+					</h:panelGrid>
+				</p:outputPanel>
+			</h:panelGrid>
+		</p:dataScroller>
+	</h:form>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Welcome New Users!</h4>
+				</div>
+				<div class="modal-body">
+
+					<form class="form-horizontal" action="authentication" role="form">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="inputEmail3"
+									placeholder="Email" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassword3"
+									placeholder="Password" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label> <input type="checkbox" /> Remember me
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default">Sign in</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<h:outputScript library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript library="js" name="underscore-min.js" />
+	<h:outputScript library="js" name="backbone-min.js" />
+	<h:outputScript library="js" name="sockjs-0.3.min.js" />
+	<h:outputScript library="js" name="stomp.js" />
+	<h:outputScript library="js"
+		name="/Bitter/WebContent/javascript/_myJs.js" />
+	<h:outputScript library="jquery-ui"
+		name="js/jquery-ui-1.8.20.custom.min.js" />
+	<h:outputScript library="jquery-notify" name="jquery.notify.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-transition.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-alert.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-modal.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-dropdown.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-scrollspy.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-tab.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-tooltip.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-popover.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-button.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-collapse.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-carousel.js" />
+	<h:outputScript library="bootstrap" name="js/bootstrap-typeahead.js" />
+
+	<script type="text/javascript">
+jQuery('#growl-container').notify();
+
+</script>
+</h:body>
+</html>

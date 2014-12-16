@@ -1,0 +1,32 @@
+package com.cooksys.interfaces;
+
+public interface IPostModel {
+	
+	
+	/**
+	 * Gets the body of this post.
+	 * @return
+	 */
+	public String getBody();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getPostedBy();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getPostedTo();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getPostedDate();
+	
+	
+	
+}

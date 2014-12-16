@@ -1,0 +1,12 @@
+package com.cooksys.back.dao;
+
+import com.cooksys.interfaces.IAccountModel;
+import com.cooksys.model.Account;
+
+public interface IAccountDAO {
+	
+	public Account getAccountByModel(IAccountModel account);
+	
+	public Account commitAccountByModel(IAccountModel account);
+
+}
