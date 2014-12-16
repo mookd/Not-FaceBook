@@ -40,6 +40,7 @@ public class AccountDAOImpl implements IAccountDAO {
 		String hql = "SELECT a from Account a WHERE Account.username = "+ account.getUsername();
 		Query query = session.createQuery(hql);
 		acc = (AccountModel) query.uniqueResult();
+		Hibernate.initialize(acc.getAccountId());
 		Hibernate.initialize(acc.getUsername());
 		Hibernate.initialize(acc.getFirstName());
 		Hibernate.initialize(acc.getLastName());
