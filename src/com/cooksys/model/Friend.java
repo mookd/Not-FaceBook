@@ -1,6 +1,6 @@
 package com.cooksys.model;
 
-// Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1
+// Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -9,23 +9,9 @@ import java.util.Date;
  */
 public class Friend implements java.io.Serializable {
 
-	private static final long serialVersionUID = 7443053278583592010L;
 	private Integer friendId;
 	private Account accountByFriendeeId;
 	private Account accountByFrienderId;
-	
-	public Friend(Integer friendId, Account accountByFriendeeId,
-			Account accountByFrienderId, Date createdDate, Date updatedDate,
-			Integer status) {
-		super();
-		this.friendId = friendId;
-		this.accountByFriendeeId = accountByFriendeeId;
-		this.accountByFrienderId = accountByFrienderId;
-		this.createdDate = createdDate;
-		this.updatedDate = updatedDate;
-		this.status = status;
-	}
-
 	private Date createdDate;
 	private Date updatedDate;
 	private Integer status;

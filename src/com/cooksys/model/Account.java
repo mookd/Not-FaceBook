@@ -1,6 +1,6 @@
 package com.cooksys.model;
 
-// Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1
+// Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,15 +10,15 @@ import java.util.Set;
  */
 public class Account implements java.io.Serializable {
 
-	
-	private static final long serialVersionUID = 897399537171693004L;
 	private Integer accountId;
 	private String username;
 	private String password;
 	private String firstname;
 	private String lastname;
 	private String urlPicture;
+	private Set groups = new HashSet(0);
 	private Set friendsForFriendeeId = new HashSet(0);
+	private Set members = new HashSet(0);
 	private Set friendsForFrienderId = new HashSet(0);
 	private Set postsForPostedTo = new HashSet(0);
 	private Set postsForPostedFrom = new HashSet(0);
@@ -27,32 +27,17 @@ public class Account implements java.io.Serializable {
 	}
 
 	public Account(String username, String password, String firstname,
-			String lastname, String urlPicture, Set friendsForFriendeeId,
-			Set friendsForFrienderId, Set postsForPostedTo,
-			Set postsForPostedFrom) {
-		this.username = username;
-		this.password = password;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.urlPicture = urlPicture;
-		this.friendsForFriendeeId = friendsForFriendeeId;
-		this.friendsForFrienderId = friendsForFrienderId;
-		this.postsForPostedTo = postsForPostedTo;
-		this.postsForPostedFrom = postsForPostedFrom;
-	}
-
-	public Account(Integer accountId, String username, String password,
-			String firstname, String lastname, String urlPicture,
-			Set friendsForFriendeeId, Set friendsForFrienderId,
+			String lastname, String urlPicture, Set groups,
+			Set friendsForFriendeeId, Set members, Set friendsForFrienderId,
 			Set postsForPostedTo, Set postsForPostedFrom) {
-		super();
-		this.accountId = accountId;
 		this.username = username;
 		this.password = password;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.urlPicture = urlPicture;
+		this.groups = groups;
 		this.friendsForFriendeeId = friendsForFriendeeId;
+		this.members = members;
 		this.friendsForFrienderId = friendsForFrienderId;
 		this.postsForPostedTo = postsForPostedTo;
 		this.postsForPostedFrom = postsForPostedFrom;
@@ -106,12 +91,28 @@ public class Account implements java.io.Serializable {
 		this.urlPicture = urlPicture;
 	}
 
+	public Set getGroups() {
+		return this.groups;
+	}
+
+	public void setGroups(Set groups) {
+		this.groups = groups;
+	}
+
 	public Set getFriendsForFriendeeId() {
 		return this.friendsForFriendeeId;
 	}
 
 	public void setFriendsForFriendeeId(Set friendsForFriendeeId) {
 		this.friendsForFriendeeId = friendsForFriendeeId;
+	}
+
+	public Set getMembers() {
+		return this.members;
+	}
+
+	public void setMembers(Set members) {
+		this.members = members;
 	}
 
 	public Set getFriendsForFrienderId() {

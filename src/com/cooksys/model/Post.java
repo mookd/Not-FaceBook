@@ -1,6 +1,6 @@
 package com.cooksys.model;
 
-// Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1
+// Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -9,24 +9,11 @@ import java.util.Date;
  */
 public class Post implements java.io.Serializable {
 
-	
-	private static final long serialVersionUID = -1026957806389026092L;
 	private Integer postId;
 	private Account accountByPostedFrom;
 	private Account accountByPostedTo;
 	private String message;
 	private Date createdDate;
-	
-	public Post(Integer postId, Account accountByPostedFrom,
-			Account accountByPostedTo, String message, Date createdDate) {
-		super();
-		this.postId = postId;
-		this.accountByPostedFrom = accountByPostedFrom;
-		this.accountByPostedTo = accountByPostedTo;
-		this.message = message;
-		this.createdDate = createdDate;
-	}
-
 
 	public Post() {
 	}

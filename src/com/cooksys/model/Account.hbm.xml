@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Dec 15, 2014 11:39:46 AM by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="com.cooksys.model.Account" table="account" catalog="facebook">
         <id name="accountId" type="java.lang.Integer">
@@ -23,11 +23,23 @@
         <property name="urlPicture" type="string">
             <column name="url_picture" length="45" />
         </property>
+        <set name="groups" table="group" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="created_by" />
+            </key>
+            <one-to-many class="com.cooksys.model.Group" />
+        </set>
         <set name="friendsForFriendeeId" table="friend" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="friendee_id" />
             </key>
             <one-to-many class="com.cooksys.model.Friend" />
+        </set>
+        <set name="members" table="member" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="account_id" />
+            </key>
+            <one-to-many class="com.cooksys.model.Member" />
         </set>
         <set name="friendsForFrienderId" table="friend" inverse="true" lazy="true" fetch="select">
             <key>
