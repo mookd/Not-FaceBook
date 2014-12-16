@@ -11,5 +11,7 @@ public interface IAccountModel {
 	public String getLastName();
 	
 	public String getUrlPicture();
+
+	public Integer getAccountId();
 	
 }
