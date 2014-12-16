@@ -11,6 +11,7 @@ public class AccountModel implements IAccountModel {
 	private String firstname;
 	private String lastname;
 	private String urlPicture;
+	private Integer accountId;
 	
 	public AccountModel() {
 	}
@@ -68,4 +69,12 @@ public class AccountModel implements IAccountModel {
 		this.username = account.getUrlPicture();
 	}
 
+	@Override
+	public Integer getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Account account) {
+		this.accountId = account.getAccountId();
+	}
 }
