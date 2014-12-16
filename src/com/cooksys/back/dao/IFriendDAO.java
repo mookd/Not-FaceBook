@@ -1,13 +1,16 @@
 package com.cooksys.back.dao;
 
 
+import java.util.List;
+
+import com.cooksys.api.IAccountModel;
 import com.cooksys.api.IFriendModel;
-import com.cooksys.model.Friend;
 
 public interface IFriendDAO {
 
-	public Friend getFriendByModel(IFriendModel friend);
+	public List<IFriendModel> getFriendList(IAccountModel account);
 	
-	public Friend commitFriendByModel(IFriendModel friend);
+	public void commitFriendByModel(IAccountModel frienderAccount, IAccountModel friendeeAccount);
 	
+	public void updateFriendByModel(IAccountModel frienderAccount, IAccountModel friendeeAccount, Integer status);
 }

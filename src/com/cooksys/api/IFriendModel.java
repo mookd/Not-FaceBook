@@ -19,9 +19,5 @@ public interface IFriendModel {
 	public Date getCreatedDate();
 
 	public Date getUpdatedDate();
-
-	
-	
-	
 	
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.model.Group" table="group" catalog="facebook">
+        <id name="groupId" type="java.lang.Integer">
+            <column name="group_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="account" class="com.cooksys.model.Account" fetch="select">
+            <column name="created_by" />
+        </many-to-one>
+        <property name="groupName" type="string">
+            <column name="group_name" length="45" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="created_date" length="19" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="updated_date" length="19" />
+        </property>
+        <set name="members" table="member" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="group_id" />
+            </key>
+            <one-to-many class="com.cooksys.model.Member" />
+        </set>
+    </class>
+</hibernate-mapping>

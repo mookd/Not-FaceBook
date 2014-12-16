@@ -7,13 +7,15 @@
         <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">bondstone</property>
-        <property name="hibernate.connection.url">jdbc:mysql://192.168.20.108:3306/facebook</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/facebook</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.search.autoregister_listeners">false</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>
         <mapping resource="com/cooksys/model/Account.hbm.xml" />
+        <mapping resource="com/cooksys/model/Member.hbm.xml" />
+        <mapping resource="com/cooksys/model/Group.hbm.xml" />
         <mapping resource="com/cooksys/model/Friend.hbm.xml" />
         <mapping resource="com/cooksys/model/Post.hbm.xml" />
     </session-factory>

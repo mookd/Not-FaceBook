@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2014 12:16:04 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.cooksys.model.Member" table="member" catalog="facebook">
+        <id name="memberId" type="java.lang.Integer">
+            <column name="member_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="account" class="com.cooksys.model.Account" fetch="select">
+            <column name="account_id" />
+        </many-to-one>
+        <many-to-one name="group" class="com.cooksys.model.Group" fetch="select">
+            <column name="group_id" />
+        </many-to-one>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>
