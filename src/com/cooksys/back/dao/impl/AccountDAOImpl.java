@@ -3,6 +3,7 @@ package com.cooksys.back.dao.impl;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -39,6 +40,11 @@ public class AccountDAOImpl implements IAccountDAO {
 		String hql = "SELECT a from Account a WHERE Account.username = "+ account.getUsername();
 		Query query = session.createQuery(hql);
 		acc = (AccountModel) query.uniqueResult();
+		Hibernate.initialize(acc.getUsername());
+		Hibernate.initialize(acc.getFirstName());
+		Hibernate.initialize(acc.getLastName());
+		Hibernate.initialize(acc.getPassword());
+		Hibernate.initialize(acc.getUrlPicture());
 		return acc;
 	}
 
